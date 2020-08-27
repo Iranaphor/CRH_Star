@@ -1,0 +1,108 @@
+meta:
+    #Define seed to use for random number generation (use -1 for full random)
+    rng_seed: 0
+    
+    #Define total number of agents to include in simulation
+    total_agents: 10
+    total_logistics: 4
+    total_crop_monitoring: 3
+    total_row_monitoring: 3
+    
+    #Define total number of cycles (total targets generated) for the agents
+    total_cycles: 50
+    
+    #Define yaml file to indicate world map
+    pointset: 'fork_map.yaml'
+        #'fork_map.yaml'
+        #'polytunnel.yaml'
+        #'riseholme_poly_act_sim.tmap'
+        #'chf_south_small.yaml'
+        #'chf_south_large.yaml'
+
+
+    fork_map:
+        storageNodes: [1]
+        rowNodes_start: [8,14,20,26,32,38]
+        rowNodes_end: [13,19,25,31,37,43]
+        cropNodes: []
+        bad_order: 0
+    polytunnel:
+        storageNodes: [1]
+        rowNodes_start: [17,23,29,35,41,47,53,58,63,68,73,78,83,88,93]
+        rowNodes_end: [22,28,34,40,46,52,57,62,67,72,77,82,87,92,97]
+        cropNodes: []
+        bad_order: 0
+    riseholme_poly_act_sim:
+        storageNodes: [103,104,105]
+        rowNodes_start: [97,96,94,92,91,90,40,39,38,37,36,35]
+        rowNodes_end: [113,13,57,67,77,80,116,119,3,12,22,26]
+        cropNodes: [
+97, 93, 50, 1, 83, 72, 61, 102, 113,
+96, 48, 47, 46, 45, 41, 34, 24, 13, 
+94, 49, 51, 52, 53, 54, 55, 56, 57,
+92, 59, 60, 62, 63, 64, 65, 66, 67,
+91, 69, 70, 71, 73, 74, 75, 76, 77,
+90, 88, 87, 86, 85, 84, 82, 81, 80,
+40, 114, 109, 108, 112, 111, 110, 115, 116,
+39, 127, 126, 125, 123, 122, 121, 120, 119,
+38, 128, 129, 130, 131, 132, 133, 134, 3,
+37, 5, 6, 7, 8, 9, 10, 11, 12,
+36, 15, 16, 17, 18, 19, 20, 21, 22,
+35, 33, 32, 31, 30, 29, 28, 27, 26]
+        bad_order: 1
+    chf_south_small:
+        storageNodes: [1]
+        rowNodes_start: [24,45,66, 87,108,129,150,171,192,213,234,255,276,297,318,339,360,381]
+        rowNodes_end: [44,65,86,107,128,149,170,191,212,233,254,275,296,317,338,359,380,401]
+        cropNodes: []
+        bad_order: 0
+    chf_south_large:
+        storageNodes: [6,7,1]
+        rowNodes_start: [
+128,149,170,191,212,233,254,275,296,317,338,359,380,401,422,443,
+464,485,506,527,548,569,590,611,632,653,674,695,716,737,758,779,
+800,821,842,863,884,905,926,947,968,989,1010,1031,1052,1073,1094,1115,
+1136,1156,1176,1196,1216,1236,1256,1276,1296,1316,1336,1356,1376,1396,1416,1436,
+1456,1476,1496,1516,1536,1556,1576,1596,1616,1635,1654,1673,1692,1711,1730,1749,
+1768,1787,1806,1825,1844,1863,1882,1901,1920,1939,1958,1977,1996,2015,2034,2053,
+2072,2090,2108,2126,2144,2162,2180,2198,2216,2234,2252,2270,2288,2306,2324,2342,
+2360,2378,2396,2414,2432,2450,2468,2486]
+        rowNodes_end: [
+148,169,190,211,232,253,274,295,316,337,358,379,400,421,442,463,
+484,505,526,547,568,589,610,631,652,673,694,715,736,757,778,799,
+820,841,862,883,904,925,946,967,988,1009,1030,1051,1072,1093,1114,1135,
+1155,1175,1195,1215,1235,1255,1275,1295,1315,1335,1355,1375,1395,1415,1435,1455,
+1475,1495,1515,1535,1555,1575,1595,1615,1634,1653,1672,1691,1710,1729,1748,1767,
+1786,1805,1824,1843,1862,1881,1900,1919,1938,1957,1976,1995,2014,2033,2052,2071,
+2089,2107,2125,2143,2161,2179,2197,2215,2233,2251,2269,2287,2305,2323,2341,2359,
+2377,2395,2413,2431,2449,2467,2485,2503]
+        cropNodes: []
+        bad_order: 0
+
+    
+    #Set simulation to show map on startup, with a further option to also display the node identifiers
+    show_map_on_startup: false
+    show_node_names: false
+    
+heuristics:
+    use_continuous_assignment: true
+    use_dynamic_scoring: false
+    use_context_dependent_heuristics: false
+    
+    independent_heuristic: ##Uncomment to include
+    - "euclidian_distance"
+    - "optimal_route_length"
+    #- "random"
+    - "planning_time"
+    #- "agent_id"
+    #- "no_replanning"
+
+    ##Inverse Variants
+    #- "inverse_euclidian_distance"
+    #- "inverse_optimal_route_length"
+    #- "inverse_planning_time"
+    
+    dependent_heuristic: ""
+    
+    include_irritation: false
+    
