@@ -134,7 +134,7 @@ classdef ROSSim < handle
                         x1=find(row_to_monitor(1)==cropNodes);
                         x2=find(row_to_monitor(2)==cropNodes);
                         [nodes_in_row,~]=find(row_to_monitor==cropNodes');
-                        node_range = range(nodes_in_row);
+                        node_range = max(nodes_in_row) - min(nodes_in_row);
                         edge_index = randi(node_range-1)+nodes_in_row(1);
                         
                         A.randomCropNode1 = cropNodes(edge_index);

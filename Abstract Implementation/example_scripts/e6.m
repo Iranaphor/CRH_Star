@@ -2,7 +2,7 @@
 addpath(genpath('./YAMLMatlab_0.4.3'));
 Config = ReadYaml('meta.yaml');
 
-Config.meta.total_cycles = 50;
+Config.meta.total_cycles = 10;
 Config.meta.total_row_monitoring = 0;
 Config.meta.total_crop_monitoring = 0;
 

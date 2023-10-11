@@ -1,15 +1,15 @@
 function [NodeList, NodeNameList, AdjacencyMatrix] = ReadTmap(yaml_file)
     yaml_file = char("./configuration_files/"+yaml_file);
 
-    if exist(string(yaml_file) + ".mat", 'file') 
-        disp("Loading data from: " + string(yaml_file) + ".mat")
-    
-        S=load(string(yaml_file) + ".mat");
-        NodeList = S.NodeList;
-        NodeNameList = S.NodeNameList;
-        AdjacencyMatrix = S.AdjacencyMatrix;
-        return
-    end
+    % if exist(string(yaml_file) + ".mat", 'file') 
+    %     disp("Loading data from: " + string(yaml_file) + ".mat")
+    % 
+    %     S=load(string(yaml_file) + ".mat");
+    %     NodeList = S.NodeList;
+    %     NodeNameList = S.NodeNameList;
+    %     AdjacencyMatrix = S.AdjacencyMatrix;
+    %     return
+    % end
     
     disp("Opening File: " + string(yaml_file))
     addpath(genpath('./YAMLMatlab_0.4.3'));
